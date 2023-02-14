@@ -37,6 +37,18 @@ var init = function () {
   ctx.fillRect(0, 0, width, height);
   console.log(koef);
 
+  var runMe = function () {
+    width = canvas.width = koef * innerWidth + rand() * width;
+    height = canvas.height = koef * innerHeight + rand() * height;
+    ctx.fillStyle = "rgba(0,0,0,1)";
+    ctx.fillRect(0, 0, width, height);
+    setTimeout(() => {
+      width = canvas.width = koef * innerWidth;
+      height = canvas.height = koef * innerHeight;
+      ctx.fillStyle = "rgba(0,0,0,1)";
+      ctx.fillRect(0, 0, width, height);
+    }, 300);
+  };
   var heartPosition = function (rad) {
     //return [Math.sin(rad), Math.cos(rad)];
     return [
@@ -59,18 +71,8 @@ var init = function () {
     ctx.fillStyle = "rgba(0,0,0,1)";
     ctx.fillRect(0, 0, width, height);
   });
-  window.addEventListener("click", function () {
-    width = canvas.width = koef * innerWidth + rand() * width;
-    height = canvas.height = koef * innerHeight + rand() * height;
-    ctx.fillStyle = "rgba(0,0,0,1)";
-    ctx.fillRect(0, 0, width, height);
-    setTimeout(() => {
-      width = canvas.width = koef * innerWidth;
-      height = canvas.height = koef * innerHeight;
-      ctx.fillStyle = "rgba(0,0,0,1)";
-      ctx.fillRect(0, 0, width, height);
-    }, 300);
-  });
+  window.addEventListener("touchend", runMe);
+  window.addEventListener("click", runMe);
 
   var traceCount = mobile ? 50 : 50;
   var pointsOrigin = [];
