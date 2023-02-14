@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine App</title>
+    <style type="text/css">
+       @import url(https://fonts.googleapis.com/css?family=Poiret+One);
+canvas {
+  position: absolute;
+  left:0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.2);
+}
+body , html{
+  font-family: 'Poiret One', Segoe UI Light, cursive;
+  overflow: hidden;
+  background-color: rgba(0,0,0,.2);
+}
+h1 {
+  position: relative;
+  z-index: 100;
+  color: white;
+}
+.bottom {
+  position: fixed;
+  z-index: 100;
+  color: white;
+  bottom: 40px;
+  width: 100%;
+  overflow: hidden;
+  /* margin: auto 0 ; */
+  text-align: center;
+}
+</style>
+  </head>
+  <body>
+    <center><h1>Happy <br />Valentines <br />Day</h1></center>
+    <canvas id="heart"></canvas>
+    <div class="bottom">❤️ nisdis</div>
+
+    <!-- <div id="app"></div> -->
+    <!-- <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <script defer type="module" src="/main.js"></script>
+  </body>
+</html>
